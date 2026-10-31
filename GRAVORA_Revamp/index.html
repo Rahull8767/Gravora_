@@ -1,0 +1,1396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="GRAVORA creates personalised gifts, custom engravings and branded products across wood, acrylic, leather, stone and selected metals."
+    />
+    <title>GRAVORA — Crafted to Leave a Mark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ivory: #f8f5ef;
+        --paper: #fffdf9;
+        --ink: #29231e;
+        --muted: #71685f;
+        --walnut: #704522;
+        --brass: #b28a52;
+        --line: #e6ded2;
+        --soft: #efe8dd;
+        --radius: 18px;
+        --shadow: 0 14px 38px rgba(54, 38, 23, 0.08);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--ivory);
+        color: var(--ink);
+        font-family: "DM Sans", sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      .topline {
+        background: #4a2c18;
+        color: #fff8ef;
+        padding: 9px 5vw;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+      }
+      .nav {
+        height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 5vw;
+        background: rgba(255, 253, 249, 0.96);
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(12px);
+      }
+      .brand img {
+        width: 230px;
+        height: 68px;
+        object-fit: contain;
+        object-position: left center;
+      }
+      .links {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        font-size: 13px;
+      }
+      .links a:hover {
+        color: var(--brass);
+      }
+      .navcta,
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        background: var(--walnut);
+        color: white;
+        padding: 13px 20px;
+        border-radius: 9px;
+        border: 1px solid var(--walnut);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .navcta:hover,
+      .btn:hover {
+        background: #4b2d18;
+        transform: translateY(-1px);
+      }
+      .btn.outline {
+        background: transparent;
+        color: var(--walnut);
+      }
+      .btn.outline:hover {
+        background: var(--soft);
+      }
+      .menu {
+        display: none;
+        background: none;
+        border: 0;
+        font-size: 25px;
+      }
+      .hero {
+        padding: 54px 5vw 62px;
+        display: grid;
+        grid-template-columns: 1fr 1.04fr;
+        gap: 45px;
+        align-items: center;
+        max-width: 1600px;
+        margin: auto;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.17em;
+        color: var(--walnut);
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .hero h1 {
+        font:
+          500 clamp(42px, 5.3vw, 76px)/1.04 "Playfair Display",
+          serif;
+        letter-spacing: -0.035em;
+        margin: 18px 0;
+      }
+      .hero h1 em {
+        color: var(--walnut);
+        font-weight: 400;
+      }
+      .hero p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--muted);
+        max-width: 580px;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 28px 0;
+      }
+      .hero-points {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        color: #5e5144;
+        font-size: 12px;
+      }
+      .hero-points span {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .hero-points b {
+        color: var(--brass);
+        font-size: 17px;
+      }
+      .heroimg {
+        width: 100%;
+        height: 460px;
+        object-fit: cover;
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+      .section {
+        padding: 72px 5vw;
+      }
+      .section.white {
+        background: var(--paper);
+      }
+      .wrap {
+        max-width: 1400px;
+        margin: auto;
+      }
+      .sectionhead {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 34px;
+      }
+      .sectionhead h2 {
+        font:
+          500 clamp(30px, 3.5vw, 46px)/1.15 "Playfair Display",
+          serif;
+        margin: 10px 0;
+      }
+      .sectionhead p {
+        color: var(--muted);
+        line-height: 1.65;
+        margin: 0;
+      }
+      .materials {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+      }
+      .material {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+        transition: 0.25s;
+      }
+      .material:hover,
+      .product:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+      .material img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+      }
+      .material div {
+        padding: 16px;
+      }
+      .material h3 {
+        font:
+          500 21px "Playfair Display",
+          serif;
+        margin: 0 0 6px;
+      }
+      .material p {
+        font-size: 12px;
+        line-height: 1.5;
+        color: var(--muted);
+        margin: 0;
+      }
+      .shopbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 20px;
+        margin-bottom: 24px;
+      }
+      .shopbar h2 {
+        font:
+          500 42px "Playfair Display",
+          serif;
+        margin: 8px 0 0;
+      }
+      .filters {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .filter {
+        border: 1px solid var(--line);
+        border-radius: 99px;
+        padding: 9px 14px;
+        background: transparent;
+        color: var(--muted);
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .filter.active,
+      .filter:hover {
+        background: var(--walnut);
+        border-color: var(--walnut);
+        color: white;
+      }
+      .products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .product {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: 0.25s;
+      }
+      .product img {
+        width: 100%;
+        height: 235px;
+        object-fit: cover;
+        display: block;
+      }
+      .productbody {
+        padding: 18px;
+      }
+      .producttop {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: start;
+      }
+      .product h3 {
+        font:
+          500 22px "Playfair Display",
+          serif;
+        margin: 0 0 7px;
+      }
+      .tag {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--walnut);
+        background: var(--soft);
+        padding: 6px 8px;
+        border-radius: 30px;
+        white-space: nowrap;
+      }
+      .product p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.55;
+        min-height: 40px;
+      }
+      .price {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--walnut);
+        margin: 12px 0 15px;
+      }
+      .product .btn {
+        width: 100%;
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+      .step {
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+      .num {
+        font:
+          italic 30px "Playfair Display",
+          serif;
+        color: var(--brass);
+      }
+      .step h3 {
+        font:
+          500 20px "Playfair Display",
+          serif;
+        margin: 10px 0;
+      }
+      .step p {
+        font-size: 13px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 42px;
+        align-items: center;
+      }
+      .split img {
+        width: 100%;
+        height: 390px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .split h2 {
+        font:
+          500 42px/1.15 "Playfair Display",
+          serif;
+        margin: 12px 0;
+      }
+      .split p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 24px 0;
+      }
+      .list span {
+        font-size: 13px;
+      }
+      .list span:before {
+        content: "✓";
+        color: var(--brass);
+        font-weight: 700;
+        margin-right: 9px;
+      }
+      .customband {
+        background: #4b2e1a;
+        color: #fff8ef;
+        border-radius: 20px;
+        padding: 42px;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: center;
+      }
+      .customband h2 {
+        font:
+          500 36px "Playfair Display",
+          serif;
+        margin: 8px 0;
+      }
+      .customband p {
+        color: #e3d6c7;
+        max-width: 650px;
+        line-height: 1.6;
+      }
+      .customband .btn {
+        background: #fff8ef;
+        color: #4b2e1a;
+        border-color: #fff8ef;
+      }
+      .footer {
+        background: #241a13;
+        color: #eee3d5;
+        padding: 48px 5vw 24px;
+      }
+      .footgrid {
+        max-width: 1400px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.3fr;
+        gap: 30px;
+      }
+      .footer img {
+        width: 210px;
+        background: var(--ivory);
+        border-radius: 8px;
+        padding: 4px;
+      }
+      .footer p,
+      .footer a {
+        font-size: 12px;
+        line-height: 1.8;
+        color: #c9b9a8;
+      }
+      .footer h4 {
+        font:
+          500 18px "Playfair Display",
+          serif;
+        color: white;
+        margin: 0 0 14px;
+      }
+      .copyright {
+        max-width: 1400px;
+        margin: 28px auto 0;
+        padding-top: 18px;
+        border-top: 1px solid #574536;
+        color: #a99886;
+        font-size: 11px;
+      }
+      .wa-float {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 9;
+        background: #247b4b;
+        color: white;
+        border-radius: 99px;
+        padding: 14px 18px;
+        box-shadow: 0 8px 22px #0002;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: #1d1712aa;
+        z-index: 30;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+      }
+      .modal.open {
+        display: flex;
+      }
+      .modalbox {
+        background: var(--paper);
+        width: min(620px, 100%);
+        max-height: 90vh;
+        overflow: auto;
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+      .modalhead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .modalhead h3 {
+        font:
+          500 28px "Playfair Display",
+          serif;
+        margin: 0;
+      }
+      .close {
+        border: 0;
+        background: var(--soft);
+        border-radius: 50%;
+        width: 34px;
+        height: 34px;
+        cursor: pointer;
+      }
+      .formgrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 13px;
+        margin: 18px 0;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .field.full {
+        grid-column: 1/-1;
+      }
+      .field label {
+        font-size: 11px;
+        font-weight: 700;
+        color: #655548;
+      }
+      .field input,
+      .field select,
+      .field textarea {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 8px;
+        padding: 12px;
+        color: var(--ink);
+        width: 100%;
+      }
+      .field textarea {
+        min-height: 90px;
+        resize: vertical;
+      }
+      .note {
+        font-size: 11px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      .hidden {
+        display: none !important;
+      }
+      @media (max-width: 1050px) {
+        .links {
+          gap: 13px;
+        }
+        .materials {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .hero {
+          gap: 25px;
+        }
+        .heroimg {
+          height: 400px;
+        }
+        .footgrid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 760px) {
+        .topline {
+          justify-content: center;
+          text-align: center;
+        }
+        .topline span:last-child {
+          display: none;
+        }
+        .nav {
+          height: 72px;
+        }
+        .brand img {
+          width: 180px;
+          height: 56px;
+        }
+        .links {
+          display: none;
+          position: absolute;
+          top: 72px;
+          left: 0;
+          right: 0;
+          background: var(--paper);
+          padding: 20px 5vw;
+          flex-direction: column;
+          align-items: start;
+          border-bottom: 1px solid var(--line);
+        }
+        .links.show {
+          display: flex;
+        }
+        .navcta {
+          display: none;
+        }
+        .menu {
+          display: block;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          padding-top: 36px;
+        }
+        .heroimg {
+          height: 300px;
+          grid-row: 1;
+        }
+        .hero h1 {
+          font-size: 48px;
+        }
+        .hero p {
+          font-size: 15px;
+        }
+        .section {
+          padding: 52px 5vw;
+        }
+        .materials {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .material img {
+          height: 145px;
+        }
+        .shopbar {
+          display: block;
+        }
+        .filters {
+          margin-top: 18px;
+        }
+        .products {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+        .product img {
+          height: 160px;
+        }
+        .productbody {
+          padding: 12px;
+        }
+        .product h3 {
+          font-size: 18px;
+        }
+        .product p {
+          font-size: 12px;
+        }
+        .tag {
+          display: none;
+        }
+        .steps {
+          grid-template-columns: 1fr 1fr;
+        }
+        .split {
+          grid-template-columns: 1fr;
+        }
+        .split img {
+          height: 260px;
+        }
+        .customband {
+          padding: 28px;
+          display: block;
+        }
+        .customband .btn {
+          margin-top: 12px;
+        }
+        .footgrid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .wa-float {
+          right: 12px;
+          bottom: 12px;
+        }
+      }
+      @media (max-width: 430px) {
+        .products {
+          grid-template-columns: 1fr;
+        }
+        .materials {
+          grid-template-columns: 1fr 1fr;
+        }
+        .steps {
+          grid-template-columns: 1fr;
+        }
+        .formgrid {
+          grid-template-columns: 1fr;
+        }
+        .field.full {
+          grid-column: auto;
+        }
+        .hero h1 {
+          font-size: 42px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topline">
+      <span
+        >PERSONALISED GIFTS &nbsp; | &nbsp; CUSTOM ENGRAVING &nbsp; | &nbsp;
+        PAN-INDIA ENQUIRIES</span
+      ><span>Turn your idea into something meaningful ✦</span>
+    </div>
+    <header class="nav">
+      <a class="brand" href="#"
+        ><img
+          src="assets/gravora-logo.png"
+          alt="GRAVORA — Crafted to Leave a Mark"
+      /></a>
+      <nav class="links" id="navlinks">
+        <a href="#">Home</a><a href="#shop">Shop</a
+        ><a href="#materials">By Material</a><a href="#custom">Custom Orders</a
+        ><a href="#business">Corporate Gifting</a><a href="#about">About</a
+        ><a href="#contact">Contact</a>
+      </nav>
+      <a
+        class="navcta"
+        href="#"
+        onclick="
+          openGeneral('General GRAVORA enquiry');
+          return false;
+        "
+        >WhatsApp Enquiry ↗</a
+      >
+      <button
+        class="menu"
+        aria-label="Open navigation"
+        onclick="document.getElementById('navlinks').classList.toggle('show')"
+      >
+        ☰
+      </button>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Personalised products & custom engraving</div>
+          <h1>Made Personal.<br /><em>Made Meaningful.</em></h1>
+          <p>
+            Discover personalised gifts, custom engravings and thoughtful
+            creations across wood, acrylic, leather, stone, selected metals and
+            more — made to leave a lasting impression.
+          </p>
+          <div class="actions">
+            <a class="btn" href="#shop">Explore Collection →</a
+            ><a class="btn outline" href="#custom">Create Something Custom</a>
+          </div>
+          <div class="hero-points">
+            <span><b>✦</b> Personalised gifts</span
+            ><span><b>◇</b> Multi-material customisation</span
+            ><span><b>▣</b> Business & bulk enquiries</span>
+          </div>
+        </div>
+        <img
+          class="heroimg"
+          src="assets/hero-multi-material.jpg"
+          alt="Illustrative display of personalised wood, leather, slate and acrylic products"
+        />
+      </section>
+
+      <section class="section white" id="materials">
+        <div class="wrap">
+          <div class="sectionhead">
+            <div class="eyebrow">Explore our range</div>
+            <h2>Personalisation Beyond Wood</h2>
+            <p>
+              From wooden keepsakes to acrylic displays, leather accessories,
+              slate pieces and selected metal products — explore customisation
+              across materials.
+            </p>
+          </div>
+          <div class="materials">
+            <article class="material">
+              <img src="assets/wood.jpg" alt="Engraved wooden keepsake" />
+              <div>
+                <h3>Wood</h3>
+                <p>Portraits, nameplates, keychains, coasters and gifts.</p>
+              </div>
+            </article>
+            <article class="material">
+              <img
+                src="assets/acrylic.jpg"
+                alt="Personalised acrylic display"
+              />
+              <div>
+                <h3>Acrylic</h3>
+                <p>Display signs, nameplates, awards and decorative pieces.</p>
+              </div>
+            </article>
+            <article class="material">
+              <img
+                src="assets/leather.jpg"
+                alt="Personalised leather accessory"
+              />
+              <div>
+                <h3>Leather</h3>
+                <p>
+                  Wallets, keychains, diary covers and selected accessories.
+                </p>
+              </div>
+            </article>
+            <article class="material">
+              <img src="assets/stone.jpg" alt="Engraved slate coaster" />
+              <div>
+                <h3>Stone & Slate</h3>
+                <p>Coasters, tiles, keepsakes and decorative pieces.</p>
+              </div>
+            </article>
+            <article class="material">
+              <img
+                src="assets/metal.jpg"
+                alt="Personalised anodised metal tag"
+              />
+              <div>
+                <h3>Metal</h3>
+                <p>Anodised aluminium tags and compatible coated products.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="shop">
+        <div class="wrap">
+          <div class="shopbar">
+            <div>
+              <div class="eyebrow">Selected creations</div>
+              <h2>Explore the Collection</h2>
+            </div>
+            <div class="filters" id="filters">
+              <button class="filter active" data-filter="all">All</button
+              ><button class="filter" data-filter="wood">Wood</button
+              ><button class="filter" data-filter="acrylic">Acrylic</button
+              ><button class="filter" data-filter="leather">Leather</button
+              ><button class="filter" data-filter="stone">Stone</button
+              ><button class="filter" data-filter="metal">Metal</button>
+            </div>
+          </div>
+          <div class="products" id="products">
+            <article class="product" data-material="wood">
+              <img
+                src="assets/Romantic Engraved Couple Portrait Plaque.png"
+                alt="Personalised wooden photo portrait"
+              />
+              <div class="productbody">
+                <div class="producttop">
+                  <h3>Personalised Wooden Portrait</h3>
+                  <span class="tag">Wood</span>
+                </div>
+                <p>
+                  A photo keepsake personalised with a name, date or short
+                  message.
+                </p>
+                <div class="price">Indicative ₹499–₹799</div>
+                <button
+                  class="btn"
+                  onclick="openProduct('Personalised Wooden Portrait')"
+                >
+                  Customise / Enquire
+                </button>
+              </div>
+            </article>
+            <article class="product" data-material="wood">
+              <img
+                src="assets/Engraved Walnut Keychain on Linen.png"
+                alt="Personalised wooden keychain"
+              />
+              <div class="productbody">
+                <div class="producttop">
+                  <h3>Engraved Wooden Keychain</h3>
+                  <span class="tag">Wood</span>
+                </div>
+                <p>
+                  A small personalised keepsake for names, initials or short
+                  text.
+                </p>
+                <div class="price">Indicative ₹99–₹199 each</div>
+                <button
+                  class="btn"
+                  onclick="openProduct('Engraved Wooden Keychain')"
+                >
+                  Customise / Enquire
+                </button>
+              </div>
+            </article>
+            <article class="product" data-material="wood">
+              <img
+                src="assets/Aarav Designer Walnut Nameplate.png"
+                alt="Wooden desk nameplate"
+              />
+              <div class="productbody">
+                <div class="producttop">
+                  <h3>Wooden Desk Nameplate</h3>
+                  <span class="tag">Wood</span>
+                </div>
+                <p>
+                  A personalised desk accent for names, titles or small logos.
+                </p>
+                <div class="price">Indicative ₹299–₹599</div>
+                <button
+                  class="btn"
+                  onclick="openProduct('Wooden Desk Nameplate')"
+                >
+                  Customise / Enquire
+                </button>
+              </div>
+            </article>
+            <article class="product" data-material="acrylic">
+              <img src="assets/acrylic.jpg" alt="Acrylic display sign" />
+              <div class="productbody">
+                <div class="producttop">
+                  <h3>Acrylic Display Sign</h3>
+                  <span class="tag">Acrylic</span>
+                </div>
+                <p>
+                  Personalised display pieces, signs and selected award designs.
+                </p>
+                <div class="price">Quote on request</div>
+                <button
+                  class="btn"
+                  onclick="openProduct('Acrylic Display Sign')"
+                >
+                  Customise / Enquire
+                </button>
+              </div>
+            </article>
+            <article class="product" data-material="leather">
+              <img
+                src="assets/leather.jpg"
+                alt="Leather wallet personalisation"
+              />
+              <div class="productbody">
+                <div class="producttop">
+                  <h3>Personalised Leather Accessory</h3>
+                  <span class="tag">Leather</span>
+                </div>
+                <p>
+                  Selected leather goods personalised with initials or short
+                  text.
+                </p>
+                <div class="price">Quote on request</div>
+                <button
+                  class="btn"
+                  onclick="openProduct('Personalised Leather Accessory')"
+                >
+                  Customise / Enquire
+                </button>
+              </div>
+            </article>
+            <article class="product" data-material="stone">
+              <img src="assets/stone.jpg" alt="Slate coaster" />
+              <div class="productbody">
+                <div class="producttop">
+                  <h3>Slate Coaster</h3>
+                  <span class="tag">Stone</span>
+                </div>
+                <p>Decorative slate coasters and selected stone keepsakes.</p>
+                <div class="price">Quote on request</div>
+                <button class="btn" onclick="openProduct('Slate Coaster')">
+                  Customise / Enquire
+                </button>
+              </div>
+            </article>
+            <article class="product" data-material="metal">
+              <img src="assets/metal.jpg" alt="Anodised aluminium tag" />
+              <div class="productbody">
+                <div class="producttop">
+                  <h3>Personalised Metal Tag</h3>
+                  <span class="tag">Metal</span>
+                </div>
+                <p>Selected anodised aluminium and coated metal products.</p>
+                <div class="price">Quote on request</div>
+                <button
+                  class="btn"
+                  onclick="openProduct('Personalised Metal Tag')"
+                >
+                  Customise / Enquire
+                </button>
+              </div>
+            </article>
+            <article class="product" data-material="wood">
+              <img
+                src="assets/Engraved Coasters.png"
+                alt="Engraved wooden coaster set"
+              />
+              <div class="productbody">
+                <div class="producttop">
+                  <h3>Custom Coaster Set</h3>
+                  <span class="tag">Wood / Slate</span>
+                </div>
+                <p>
+                  Personalised coasters for gifting, cafes and branded spaces.
+                </p>
+                <div class="price">Quote on request</div>
+                <button class="btn" onclick="openProduct('Custom Coaster Set')">
+                  Customise / Enquire
+                </button>
+              </div>
+            </article>
+            <article class="product" data-material="acrylic">
+              <img
+                src="assets/Personalized Awards and Engraved Coasters.png"
+                alt="Custom acrylic award"
+              />
+              <div class="productbody">
+                <div class="producttop">
+                  <h3>Custom Plaques & Awards</h3>
+                  <span class="tag">Acrylic / Mixed</span>
+                </div>
+                <p>
+                  Recognition pieces and custom displays, subject to material
+                  suitability.
+                </p>
+                <div class="price">Quote on request</div>
+                <button
+                  class="btn"
+                  onclick="openProduct('Custom Plaques & Awards')"
+                >
+                  Customise / Enquire
+                </button>
+              </div>
+            </article>
+          </div>
+          <p class="note" style="margin-top: 18px">
+            Prices shown for selected wooden products are indicative planning
+            ranges, not final quotations. All other products are quoted after
+            confirming material, dimensions, quantity and process feasibility.
+          </p>
+        </div>
+      </section>
+
+      <section class="section white">
+        <div class="wrap">
+          <div class="sectionhead">
+            <div class="eyebrow">Simple, personal, direct</div>
+            <h2>How Customisation Works</h2>
+            <p>
+              Share your idea. We review the product and material requirements,
+              confirm feasibility and send you a quotation.
+            </p>
+          </div>
+          <div class="steps">
+            <article class="step">
+              <div class="num">01</div>
+              <h3>Choose a Product</h3>
+              <p>
+                Browse the collection or tell us what you have in mind,
+                including the material and intended use.
+              </p>
+            </article>
+            <article class="step">
+              <div class="num">02</div>
+              <h3>Share Your Details</h3>
+              <p>
+                Send names, text, dates, artwork or a reference photo. Attach
+                files directly in WhatsApp when the chat opens.
+              </p>
+            </article>
+            <article class="step">
+              <div class="num">03</div>
+              <h3>Confirm the Quote</h3>
+              <p>
+                We check material compatibility, design, quantity and delivery
+                requirements before confirming the order.
+              </p>
+            </article>
+            <article class="step">
+              <div class="num">04</div>
+              <h3>Production & Delivery</h3>
+              <p>
+                Once details and payment terms are agreed, the order moves to
+                production, quality check and dispatch.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="business">
+        <div class="wrap split">
+          <img
+            src="assets/metal.jpg"
+            alt="Personalised branded metal product concept"
+          />
+          <div>
+            <div class="eyebrow">For brands, teams & events</div>
+            <h2>Custom Creations for Your Business</h2>
+            <p>
+              Explore branded merchandise and personalised products for cafes,
+              offices, events, real-estate businesses and gifting requirements.
+            </p>
+            <div class="list">
+              <span>Branded coasters</span><span>Table numbers & QR stands</span
+              ><span>Corporate gifting</span><span>Employee appreciation</span
+              ><span>Event merchandise</span><span>Custom plaques & tags</span>
+            </div>
+            <button
+              class="btn"
+              onclick="
+                openGeneral(
+                  'I am enquiring about a business or bulk order. Please help me with product options and a quotation.',
+                )
+              "
+            >
+              Request a Bulk Quote ↗
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section white" id="about">
+        <div class="wrap split">
+          <div>
+            <div class="eyebrow">The idea behind GRAVORA</div>
+            <h2>Objects Become Meaningful When They're Personal.</h2>
+            <p>
+              GRAVORA is a personalised products and customisation brand built
+              around the idea that names, photographs, messages and brand
+              identities can turn everyday objects into something worth keeping.
+            </p>
+            <p>
+              From keepsakes to business merchandise, we explore different
+              materials and suitable production methods to bring each idea to
+              life.
+            </p>
+            <p class="eyebrow">Crafted to Leave a Mark.</p>
+          </div>
+          <img
+            src="assets/hero-multi-material.jpg"
+            alt="Personalised creations across different materials"
+          />
+        </div>
+      </section>
+
+      <section class="section" id="custom">
+        <div class="wrap">
+          <div class="customband">
+            <div>
+              <div class="eyebrow" style="color: #d8b987">Have an idea?</div>
+              <h2>Let's Make Something Personal.</h2>
+              <p>
+                Send a sketch, photograph, logo or a short description of what
+                you want. We'll discuss the material, feasibility and next steps
+                with you.
+              </p>
+            </div>
+            <button
+              class="btn"
+              onclick="
+                openGeneral(
+                  'Hello GRAVORA! I have a custom product idea. I would like to discuss the material, design and quotation.',
+                )
+              "
+            >
+              Start a Custom Enquiry ↗
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="contact">
+      <div class="footgrid">
+        <div>
+          <img src="assets/gravora-logo.png" alt="GRAVORA logo" />
+          <p>
+            Personalised products, custom engravings and thoughtful creations
+            across materials.
+          </p>
+          <p><strong>Crafted to Leave a Mark.</strong></p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <p>
+            <a href="#shop">Shop products</a><br /><a href="#materials"
+              >Shop by material</a
+            ><br /><a href="#custom">Custom orders</a><br /><a href="#business"
+              >Corporate gifting</a
+            >
+          </p>
+        </div>
+        <div>
+          <h4>Materials</h4>
+          <p>
+            Wood<br />Acrylic<br />Leather<br />Stone & Slate<br />Selected
+            metals
+          </p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>
+            WhatsApp: replace with your business number<br />Email: add your
+            business email<br />Instagram: add your profile link
+          </p>
+          <a
+            href="#"
+            onclick="
+              openGeneral('Hello GRAVORA! I would like to make an enquiry.');
+              return false;
+            "
+            >Send an enquiry ↗</a
+          >
+        </div>
+      </div>
+      <div class="copyright">
+        © <span id="year"></span> GRAVORA. All rights reserved. Product
+        availability and material compatibility are confirmed per enquiry.
+      </div>
+    </footer>
+    <a
+      class="wa-float"
+      href="#"
+      onclick="
+        openGeneral('Hello GRAVORA! I would like to make an enquiry.');
+        return false;
+      "
+      >WhatsApp Enquiry ↗</a
+    >
+
+    <div
+      class="modal"
+      id="enquiryModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modalbox">
+        <div class="modalhead">
+          <h3 id="modalTitle">Enquire about a product</h3>
+          <button class="close" onclick="closeModal()" aria-label="Close">
+            ✕
+          </button>
+        </div>
+        <p class="note">
+          Share the basics below. WhatsApp will open with your enquiry summary.
+          You can attach a photo or logo manually in the chat.
+        </p>
+        <form id="enquiryForm">
+          <div class="formgrid">
+            <div class="field full">
+              <label for="product">Product / enquiry</label
+              ><input id="product" name="product" required />
+            </div>
+            <div class="field">
+              <label for="material">Preferred material</label
+              ><select id="material" name="material">
+                <option>Not sure — please advise</option>
+                <option>Wood</option>
+                <option>Acrylic</option>
+                <option>Leather</option>
+                <option>Stone / Slate</option>
+                <option>Selected metal</option>
+                <option>Other / discuss</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="qty">Quantity</label
+              ><input id="qty" name="qty" type="number" min="1" value="1" />
+            </div>
+            <div class="field">
+              <label for="name">Your name</label
+              ><input id="name" name="name" placeholder="Name" />
+            </div>
+            <div class="field">
+              <label for="pin">Delivery PIN code</label
+              ><input
+                id="pin"
+                name="pin"
+                inputmode="numeric"
+                placeholder="PIN code"
+              />
+            </div>
+            <div class="field full">
+              <label for="personal">Personalisation details</label
+              ><textarea
+                id="personal"
+                name="personal"
+                placeholder="Names, message, date, logo details or design idea"
+              ></textarea>
+            </div>
+            <div class="field">
+              <label for="deadline">Required-by date (optional)</label
+              ><input id="deadline" name="deadline" type="date" />
+            </div>
+            <div class="field">
+              <label for="email">Email (optional)</label
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+              />
+            </div>
+            <div class="field full">
+              <label for="notes">Additional notes</label
+              ><textarea
+                id="notes"
+                name="notes"
+                placeholder="Size, finish, reference details or anything else"
+              ></textarea>
+            </div>
+          </div>
+          <button class="btn" type="submit" style="width: 100%">
+            Continue to WhatsApp ↗
+          </button>
+        </form>
+      </div>
+    </div>
+    <script>
+      /* IMPORTANT: Replace this placeholder with GRAVORA's real WhatsApp number, country code included, digits only. Example for India: 919876543210 */
+      const WHATSAPP_NUMBER = "918767655387";
+      function sendWhatsApp(message) {
+        if (WHATSAPP_NUMBER.includes("X")) {
+          alert(
+            "Please add GRAVORA's real WhatsApp number in the website code before publishing.",
+          );
+          return;
+        }
+        window.open(
+          "https://wa.me/" +
+            WHATSAPP_NUMBER +
+            "?text=" +
+            encodeURIComponent(message),
+          "_blank",
+          "noopener",
+        );
+      }
+      function openGeneral(message) {
+        sendWhatsApp(message);
+      }
+      function openProduct(name) {
+        document.getElementById("product").value = name;
+        document.getElementById("modalTitle").textContent =
+          "Customise your enquiry";
+        document.getElementById("enquiryModal").classList.add("open");
+      }
+      function closeModal() {
+        document.getElementById("enquiryModal").classList.remove("open");
+      }
+      document
+        .getElementById("enquiryForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const d = new FormData(this);
+          const msg = [
+            "Hello GRAVORA! I would like to enquire about a product.",
+            "Product: " + d.get("product"),
+            "Preferred material: " + d.get("material"),
+            "Quantity: " + d.get("qty"),
+            "Name: " + (d.get("name") || "Not provided"),
+            "Delivery PIN: " + (d.get("pin") || "Not provided"),
+            "Personalisation: " + (d.get("personal") || "To be discussed"),
+            "Required by: " + (d.get("deadline") || "Not specified"),
+            "Email: " + (d.get("email") || "Not provided"),
+            "Additional notes: " + (d.get("notes") || "None"),
+          ].join("\n");
+          sendWhatsApp(msg);
+        });
+      document.getElementById("filters").addEventListener("click", (e) => {
+        const b = e.target.closest("button[data-filter]");
+        if (!b) return;
+        document
+          .querySelectorAll(".filter")
+          .forEach((x) => x.classList.toggle("active", x === b));
+        document
+          .querySelectorAll(".product")
+          .forEach((card) =>
+            card.classList.toggle(
+              "hidden",
+              b.dataset.filter !== "all" &&
+                card.dataset.material !== b.dataset.filter,
+            ),
+          );
+      });
+      document.getElementById("year").textContent = new Date().getFullYear();
+      document.getElementById("enquiryModal").addEventListener("click", (e) => {
+        if (e.target.id === "enquiryModal") closeModal();
+      });
+    </script>
+  </body>
+</html>
